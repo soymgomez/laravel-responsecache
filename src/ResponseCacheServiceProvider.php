@@ -13,6 +13,12 @@ use Spatie\ResponseCache\Serializers\Serializer;
 
 class ResponseCacheServiceProvider extends PackageServiceProvider
 {
+
+    public function register(): void
+    {
+        app()->singleton(CacheResponse::class);
+    }
+
     public function configurePackage(Package $package): void
     {
         $package
